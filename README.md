@@ -11,6 +11,7 @@ kapsamı dolayısıyla baglı liste kullanarak projeyi ˘
 gerc¸ekles¸tirdik.
 Queue leri anlamak icin kısaca s¸u adımları
 sayabiliriz::
+
 • Kuyrugun ilk kısmına (bas¸ına) ”FRONT” son
 kısmına ”REAR” denir
 • Kuyruk yapısında iki uctanda is¸lemler yapılabilir
