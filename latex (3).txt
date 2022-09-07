@@ -1,0 +1,168 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{fontenc}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\Large
+\begin{document}
+
+    \title{KOCAELI UNIVERSITESI\\BILGISAYAR MUHENDISLIGI\\-\\PROLAB I-3\\PRIORITY QUEUE}
+
+\author{\IEEEauthorblockN{Muhammed Numan MERCAN}
+\IEEEauthorblockA{\textit{200202098} \\
+\\
+}
+\and
+\IEEEauthorblockN{Mehmet Ali AKDOGAN}
+\IEEEauthorblockA{20202017} \\
+
+
+
+
+}
+
+\maketitle
+
+
+
+\begin{large}
+
+
+\section{\textbf{BAŞLARKEN}}
+Bu projede oncelikli kuyruk (priority queue) veri yapısı kullanarak hava uçuş kontrol sistemi yapmamız amaçlanmıstır.\\
+Kuyruk veri yapisi adındanda anlaşılacağı üzere ard arda elemanların eklenerek ve ilk eklenen elemanların kuyruktan ilk ayrılması ile sonuclanan (FIFO - Firs in First Out prensibi) bir veri yapısı algoritmasıdır.
+Bu yapı dizi veya baglı liste yapısı kullanılarak oluşturulabilir. Biz bu projede projenin kapsamı dolayısıyla bağlı liste kullanarak projeyi gerçekleştirdik. \\
+Queue leri anlamak icin kısaca şu adımları sayabiliriz::\\
+
+• Kuyrugun ilk kısmına (başına) "FRONT"  son kısmına "REAR" denir\\
+• Kuyruk yapısında iki uctanda işlemler yapılabilir\\
+• Enqueue ile kuyruga eleman eklenir (kuyruk sonuna ya da oncelige göre)\\
+• Dequeue ile kuyruktan eleman cikarilir. Front kısımdaki eleman ilk olarak işlem yapacagı icin ilk olarak o cıkarılır.\\
+\\
+ Kuyruk yapısında belli başlı fonksiyonlar vardır , bunlardan bazıları : \\
+•peek() : Sıradaki elemani getirir\\
+•add() : Kuyruga eleman ekler\\
+•remove() : Belirli elemani siler\\
+•poll () : Son elemani getirir ve siler\\
+•clear() : Tum elemanlari siler
+
+
+\section{\textbf{OZET}}
+
+Projeye queue yapısını tekrar inceleyip iyice ogrenerek basit alıştırmalar yaparak başladık. Basit yapılarda kullanmayı ogrendikten sonra bu kuyrukları oncelik sırası ile çalıştırmayı ve onlar üstünden işlem (cıkar,ekle) yapmayı başardık. \\
+   Ardından isterleri nasıl yapabileceğimiz hakkında planlama ve kabaca taslak oluşturma aşamasına geçtik bu aşamada örnek kopleks oncelik yapılarını - projelerini inceleyerek nelerin nasıl yapıldıgı hakkında fikir edindik. Basit bir akış şeması ile süreci gorunur kılmaya çalıştık ve ardından zaten alıştırma yaptıgımız kodlamaya iyice giriştik. Oncelikli kuyrukta oncelikleri tam olarak sıralayabilmek bizi fazlasıyla yordu. Ve bu oncelikleri inis saatleri ile paralel işleyebilmek işimizi en zorlayan yer burası oldu.
+Yaptığımız sonuları yazdirarak terminalde gosterdik.\\
+\\
+Rapor , yaptigimiz bu projeyi her tarafıyla açıklıyor olacaktır.\\
+
+
+\section{\textbf{GİRİŞ}}
+     Priority queue yapısını öğrenip basit kodlara kurduktan sonra isterlere göre bir kuyruk yapısı olusturmaya koyulduk , eklenen elemanı onceki eleman veya elemanlarla - bu elemanları temp ve prevTemp adlı değişkenlerde saklayarak tüm elemanları kontrol etme amacı ile kullandık- kontrol eden koşul ve döngüler kurduk. Kurdugumuz koşşullu yapılarda bazı goremedigimiz ve bizi fazlasıyla ugrastıran mantık hataları oldu. Bu hataları deneyerek gormeye ve düzeltmeye çalıştık. \\
+     \vspace{2px} Bu şekilde yaklaşık yapımızı olusturduktan sonra yapılması olası isterleri gostermek ve sectirmek adına secim menusu hazırladık. Bu menu ile manuel secimler ile kuyruk oluşturuluyor ve üzerinde isterlere gore kontroller saglanıyordu.\\
+     Tabi projede istenen bu ekleme ve düzenlemeleri el ile değil otomatik olarak "input.txt" dosyasından cekerek alıp kontrollere sokmaktı. Bu yüzden elimizdeki yapıyı verilerin dosyadan alınacak haliyle düzenlemeye çalıştık.
+    \\
+\subsection{YONTEM ve İLERLEYİŞ}\label{AA}
+     Biz öncelikle bir çok projede yaptıgımız gibi projenin temel yapısındaki algoritmayı , ardından o algoritma dogrultusunda bizden istenenleri ve bizim ilk olarak yapabileceklerimizi araştırmamız ile ilgili kücük bir yol haritası ve taslak oluşturma ile başlıyoruz. Bu planlama sonrası açık bir anlayış kazandıysak projeye karsı tam olarak kodlamaya başlıyor ve ilerliyorduk. Bu projede kuyruk yapısı hakkında fazla eksiğimiz ve az tecrübemiz olduğu için yapabileceklerimiz ve onları nasıl gerçekleştireceğimiz konusunda aksaklıklar yaşadık. Bu durum haliyle projenin tam anlayısla değil anlayarak kodlama yoluyla olusmasını sagladı. 
+
+
+
+
+
+\begin{figure}[htbp]
+
+\centerline{\includegraphics[width=0.45\textwidth]{yapiorn.png}}
+\caption{Tek elemanli bir kuyruk ornegi}
+\label{fig1}
+Bu yapi kuyrukta tel eleman oldugunda front ve rear yapisinin nerede oldugunu acikliyor , tek eleman kaldiginda olusabilecek mantık ve referans hatalarini gidermek icin boyle bir tanıimlama yapmamiz gerekecek.
+\end{figure}
+
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.4\textwidth]{Sirasiz.png}}
+\caption{Dosayadan okunan sirasiz veriler}
+\label{fig1}
+Burada "input.txt" dosyasindan okunan degerlerin oncelik , ucakID , saat verileri ile okunmus hali bulunuyor.
+\end{figure}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.4\textwidth]{Sirali.png}}
+\caption{Verilerin kuyruga eklenmis hali}
+\label{fig1}
+Burada okunan veriler saat ve oncelik baz alınarak kuyruga eklenmis durumdalar.
+\end{figure}
+
+\section{\textbf{SONUCLAR}}
+Projede sürecin sonuna yaklasirken elimizde pek elle tutulur bir program yoktu fakat gozden kacirdigimiz kücük ama etkisi büyük bir problemi farketmemeiz sonucunda o problemi cozerek cok hızlı bir sekilde sonuca ve neredeyse tüm isterleri karşılar hale ulaştık.
+Bize başta kuyruk veri yapısını ve en önemlisi de bazen resme biraz daha geriden bakma tecrubesini edinmeyi saglaması projenin en buyuk getirilerinden oldu. Bu sayede hem teknik hemde hayat tecrübesi açısından güzel bir deneyim edinmiş olduk. Bu proje ile birlikte planlamayı , sürec yonetmedeki hataları kodlama ve planlama arasındaki baglantiyi ve problemi en basit haliyle cozebilmenin avantajlarını ogrenmiş ve ileriki deneyimlerimizde kullanmak üzere almış olduk.
+
+
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.42\textwidth]{kalkis.png}}
+\caption{Sirasi geldiginde kalkis yapan ucaklar}
+\label{fig2}
+Burada kuyruga girmis ve sirasi gelmis ucaklarin kalkis yapmasi ve kalkis ile ilgili bazi bilgileri veriliyor\\
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+\vspace{14pt}
+\includegraphics[scale=0.53]{MainFlow.png}
+\caption{Akis Semasi Ana Govde}
+\label{fig4}
+Burada main fonksiyonu icinde yaptigimiz islem akışını akış şemasi ile gosterdik , icerde kullandıgımız diger fonksiyonların algoritma akış şemaları bu kısımda karışık ve büyük duracağından dolayı onlarıda ayrı bir şema ile gosterdik.\\
+
+\end{figure}
+Proje için planlama yaparken oluşturdugumuz ve problemin çözümünü anlaşılır kılan ve kodlamada işimize yarayan akış şemasını raporun ilerleyen kısımlarında göreceksiniz.Bu şemaları ayrı ayrı yapmakta fayda gördük çünkü birleşik bir şema fazlasıyla kompleks ve büyük duruyor olacaktı.\\\\
+Bu raporda projemizi sürecin başından sonuna kadar hem problemin hemde problem cözümünün aşamalarını açıklamak ve anlaşılır kılmak için bir rehber niteliği görmektedir. 
+
+\begin{figure}
+\centerline{\includegraphics[width=0.48\textwidth]{Enqueue.jpg}}
+\caption{Enqueue fonksiyon FC.}
+\label{fig5}
+Kuyruga eleman ekleme  fonksiyonlari bu kısımda bulunuyor.\\
+\vspace{1000pt}
+\end{figure}
+
+
+\begin{figure}
+\centerline{\includegraphics[width=0.48\textwidth]{Dequeue.jpg}}
+\caption{Dequeue fonksiyon FC.}
+\label{fig5}
+Kuyrukta siradaki elemani cikarma fonksiyonlari bu kısımda bulunuyor.\\
+\vspace{1000pt}
+\end{figure}
+
+
+
+
+
+\vspace{1000pt}
+\color{black}
+\vspace{1000pt}
+
+\section{\textbf{KAYNAKCA}}
+\vspace{10pt}
+\begin{itemize}
+\color{blue}
+\item https://medium.com/@tolgahan.cepel \\ Veri Yapıları : Queue\\
+\item http://www.belgeler.org/glibc/glibc-Finding-Tokens-in-a-String.html\\
+\item https://www.javatpoint.com/priority-queue-using-linked-list\\
+\item http://www.baskent.edu.tr/\\
+\item Bilgisayar Kavramlari : Veri Yapilari - Queue \\
+https://bilgisayarkavramlari.com/\\
+\item https://www.geeksforgeeks.org/priority-queue-using-linked-list/\\
+\item https://en.wikipedia.org/wiki/\\ Priority Queue \\
+\end{itemize}
+
+\vspace{15pt}
+\end{large}
+\end{document}
