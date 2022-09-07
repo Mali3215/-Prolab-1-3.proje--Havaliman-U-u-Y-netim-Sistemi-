@@ -14,16 +14,24 @@ sayabiliriz::
 
 • Kuyrugun ilk kısmına (bas¸ına) ”FRONT” son
 kısmına ”REAR” denir
+
 • Kuyruk yapısında iki uctanda is¸lemler yapılabilir
+
 • Enqueue ile kuyruga eleman eklenir (kuyruk
 sonuna ya da oncelige gore) ¨
+
 • Dequeue ile kuyruktan eleman cikarilir. Front
 kısımdaki eleman ilk olarak is¸lem yapacagı icin ilk
 olarak o cıkarılır.
 Kuyruk yapısında belli bas¸lı fonksiyonlar vardır ,
 bunlardan bazıları :
+
 •peek() : Sıradaki elemani getirir
+
 •add() : Kuyruga eleman ekler
+
 •remove() : Belirli elemani siler
+
 •poll () : Son elemani getirir ve siler
+
 •clear() : Tum elemanlari siler
