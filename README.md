@@ -35,3 +35,5 @@ bunlardan bazıları :
 •poll () : Son elemani getirir ve siler
 
 •clear() : Tum elemanlari siler
+
+Projenin detayları rapor kısmında paylaşılmıştır.
